@@ -20,7 +20,7 @@ createNestServer(server)
       Logger.log(`🚀 Starting development server on http://localhost:${process.env.PORT || 3333}`)
       v.listen(process.env.PORT || 3333)
     }*/
-    v.listen(process.env.PORT || 3333)
+    // v.listen(process.env.PORT || 3333) avoiding port definition
   })
   .catch((err) => Logger.error('Nest broken', err))
 http('apiNEST', server)
