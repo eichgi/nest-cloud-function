@@ -14,13 +14,12 @@ export const createNestServer = async (expressInstance) => {
 }
 createNestServer(server)
   .then((v) => {
-    /*if (process.env.environment === "dev") {
-      Logger.log('🚀 Starting production server...')
-    } else {
+    if (process.env.ENVIRONMENT === "dev") {
       Logger.log(`🚀 Starting development server on http://localhost:${process.env.PORT || 3333}`)
       v.listen(process.env.PORT || 3333)
-    }*/
-    // v.listen(process.env.PORT || 3333) avoiding port definition
+    } else {
+      Logger.log('🚀 Starting production server...')
+    }
   })
   .catch((err) => Logger.error('Nest broken', err))
 http('apiNEST', server)
